@@ -16,6 +16,9 @@ import { CommonModule } from '@angular/common';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import { UserCreateComponent } from '../modules/user-create/user-create.component';
+import { UserDataService } from '../services/userDataService';
+import { UserCardComponent } from '../modules/user-card/user-card.component';
 
 
 
@@ -23,7 +26,9 @@ import {InputSwitchModule} from 'primeng/inputswitch';
   declarations: [
     AppComponent,
     HomePageComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    UserCreateComponent,
+    UserCardComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,11 @@ import {InputSwitchModule} from 'primeng/inputswitch';
     InputSwitchModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [CookieService],
+  providers: 
+  [
+    CookieService,
+    UserDataService
+  ],
   bootstrap: [AppComponent,HomePageComponent]
 })
 export class AppModule { }

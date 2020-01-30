@@ -11,13 +11,13 @@
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    animation: loadingCircle 2s normal forwards;
-    -o-animation: loadingCircle 2s normal forwards;
-    -webkit-animation: loadingCircle 2s normal forwards;
-    -ms-animation: loadingCircle 2s normal forwards;
-    -moz-animation: loadingCircle 2s normal forwards;
+    animation: loadingCircle 4s normal forwards;
+    -o-animation: loadingCircle 4s normal forwards;
+    -webkit-animation: loadingCircle 4s normal forwards;
+    -ms-animation: loadingCircle 4s normal forwards;
+    -moz-animation: loadingCircle 4s normal forwards;
     animation-delay:0s;
-    background-color: #2de55f;
+    background-color: #0f4c75;
 }
 
 .login-page
@@ -49,15 +49,21 @@
         {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            padding: 30px;
+            align-items: center;            
+            padding: 0 50px;
             flex: 1;
+            label + input 
+            {
+              margin-bottom: 10px;
+            }
         }
         .image
         {
-            width: 100%;
+            width: 200%;            
             height: 100%;
             flex: 1;
+            background-image: url('https://miro.medium.com/max/2848/0*F3Hrw2qU3aER2Qxr');
+            image-rendering: crisp-edges;
         }
     }
 }
@@ -92,4 +98,9 @@
       opacity:1;
       box-shadow: 2px 2px 2px rgba(88, 81, 81, 0.596);
     }
+}
+#particles-js {
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }

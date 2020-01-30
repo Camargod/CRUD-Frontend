@@ -1,23 +1,29 @@
 <div class="header">
-  <div class="title">EtelgPass</div>
+  <div class="title">UserCad</div>
 
   <div id="menu" class="sections-menu">
     <div data-menuanchor="Home" [class.item-selected]="headerSelectedSection == 0" class="item"><a href="#Home"> Home </a></div>
-    <div data-menuanchor="Notas" [class.item-selected]="headerSelectedSection == 1" [hidden]="!isLogged" class="item"> <a href="#Notas"> Notas </a> </div>
-    <div data-menuanchor="Faltas" [class.item-selected]="headerSelectedSection == 2" [hidden]="!isLogged" class="item"> <a href="#Faltas"> Faltas </a></div>
+    <div data-menuanchor="Notas" [class.item-selected]="headerSelectedSection == 1" [hidden]="!isLogged" class="item"> <a href="#Sistema"> Sistema </a> </div>
   </div>
 
   <div class="right-side"></div>
 </div>
   
-<div fullpage id="fullpage2" [options]="config" (ref)="getRef($event)" class="full-page">
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" class="full-page">
   <div class="section"> 
       <home-page *ngIf="isLogged">
       </home-page>
-      <app-login-page *ngIf="!isLogged">
-      </app-login-page>
+      <login-page *ngIf="!isLogged">
+      </login-page>
   </div>
 
-  <div class="section"><h1>Section 2</h1></div>
-  <div class="section"><h1>Section 3</h1></div>
+  <div class="section system">
+    <div class="slide" data-anchor="slide1">
+      <div *ngIf="isLoaded">
+        <user-create [users]="usersArray">
+        </user-create>
+      </div>
+    </div>
+    <div class="slide" data-anchor="slide2">Two 2</div>
+  </div>
 </div>

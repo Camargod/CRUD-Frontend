@@ -1,0 +1,12 @@
+<div class="body">
+    <div class="header">
+        <h1>Usuários</h1>
+    </div>
+    <div *ngIf="users">
+        <div class="users">
+            <div *ngFor="let item of users">
+                <user-card [user]='item'></user-card>
+            </div>
+        </div>
+    </div>
+</div>

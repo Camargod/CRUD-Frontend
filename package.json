@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "httpServer": "ng build --prod && http-server -p 8080 -c-1 dist/EtelgPass-frontend"
+    "httpServer": "ng build --prod && http-server -p 8080 -c-1 dist/CRUD-Frontend"
   },
   "private": true,
   "dependencies": {
@@ -25,8 +25,11 @@
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
     "@fullpage/angular-fullpage": "0.0.14",
+    "axios": "^0.19.2",
     "http-server": "^0.12.0",
+    "jquery": "^3.4.1",
     "ngx-cookie-service": "^2.2.0",
+    "particle.js": "^1.0.7",
     "primeicons": "^2.0.0",
     "primeng": "^9.0.0-rc.2",
     "rxjs": "~6.4.0",
@@ -38,9 +41,9 @@
     "@angular/cli": "~8.3.20",
     "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",

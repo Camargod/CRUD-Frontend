@@ -14,7 +14,7 @@
   {
     font-family: 'Bree Serif', serif;
     font-size: 22px;
-    color:#2de55f;
+    color:#3282b8;
     padding-left: 10px;
     flex: 1;
   }
@@ -47,7 +47,7 @@
       padding-left: 18px;
       padding-top: 0px;
       padding-right: 18px;
-      background-color: #2de55f;
+      background-color: #3282b8;
       border-radius: 14px;
       transition-duration: 1.2s;
       -webkit-transition-duration: 1.2s;
@@ -75,4 +75,14 @@
     text-decoration: none;
     color: white;      
   }
+}
+
+.system
+{
+  color: white;
+}
+
+:host ::ng-deep .fp-tableCell
+{
+  vertical-align: baseline;
 }

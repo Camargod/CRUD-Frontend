@@ -1,0 +1,45 @@
+.card
+{
+    width: 320px;
+    height: 100px;
+    background-color: white;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+
+    .head
+    {
+        display: flex;
+        flex-direction: row;
+        .image
+        {
+            border-radius: 50%;
+            padding: 4px;
+        }
+        .name
+        {
+            margin-top: 30px;        
+            color: black;
+            flex: 2;
+            height: 20px;
+        }
+        .delete-icon:hover
+        {
+            fill: #bbe1fa;
+        }
+    }
+
+    .body
+    {
+        margin-top: -2px;
+        display: flex;
+        flex-direction: row;
+        color: black;
+        flex-wrap: wrap;
+        overflow: hidden;
+        text-align: justify;
+        padding: 0 6px;
+        font-size: 14px;
+    }
+}

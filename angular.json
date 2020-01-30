@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "EtelgPass-frontend": {
+    "CRUD-Frontend": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/EtelgPass-frontend",
+            "outputPath": "dist/CRUD-Frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,7 +32,7 @@
             [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js"]
           },
           "configurations": {
             "production": {
@@ -81,21 +81,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "EtelgPass-frontend:build"
+            "browserTarget": "CRUD-Frontend:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "EtelgPass-frontend:build:production"
+              "browserTarget": "CRUD-Frontend:build:production"
             },
             "development": {
-              "browserTarget": "EtelgPass-frontend:build:development"
+              "browserTarget": "CRUD-Frontend:build:development"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "EtelgPass-frontend:build"
+            "browserTarget": "CRUD-Frontend:build"
           }
         },
         "test": {
@@ -133,15 +133,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "EtelgPass-frontend:serve"
+            "devServerTarget": "CRUD-Frontend:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "EtelgPass-frontend:serve:production"
+              "devServerTarget": "CRUD-Frontend:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "EtelgPass-frontend"
+  "defaultProject": "CRUD-Frontend"
 }
