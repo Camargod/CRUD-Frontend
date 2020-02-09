@@ -24,9 +24,9 @@
     .header
     {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
         padding: 25px;
         -webkit-order: 0;
         -ms-flex-order: 0;
@@ -37,6 +37,8 @@
         -webkit-align-self: auto;
         -ms-flex-item-align: auto;
         align-self: auto;
+        width: 100%;
+
     }
     .users
     {

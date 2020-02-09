@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card" id="{{user.id}}">
     <div class="head">
-        <img class="image" width="55px" height="55px" src={{user.avatar_url}} alt="Foto do Usuario"/>
+        <img class="image" width="55px" height="55px" onerror="this.src='https://iomed.health/assets/img/100x100/blank-user.png'" src={{user.avatar_url}} alt="Foto do Usuario"/>
         <span class="name">{{user.name}}</span>
         <svg class="bi bi-trash delete-icon" width="1.3em" height="1.3em" viewBox="0 0 20 20" fill="#3282b8" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 7.5A.5.5 0 018 8v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V8z"></path>

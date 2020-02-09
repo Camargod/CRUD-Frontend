@@ -1,23 +1,27 @@
+<simple-notifications>
+</simple-notifications>
+
 <div class="header">
   <div class="title">UserCad</div>
 
   <div id="menu" class="sections-menu">
-    <div data-menuanchor="Home" [class.item-selected]="headerSelectedSection == 0" class="item"><a href="#Home"> Home </a></div>
-    <div data-menuanchor="Notas" [class.item-selected]="headerSelectedSection == 1" [hidden]="!isLogged" class="item"> <a href="#Sistema"> Sistema </a> </div>
+    <div data-menuanchor="Home" [class.item-selected]="headerSelectedSection == 0" [hidden]="!isLogged" (click)="moveUp()" class="item">  Home </div>
+    <div data-menuanchor="Home" [class.item-selected]="headerSelectedSection == 0" [hidden]="isLogged" class="item"> Login </div>
+    <div data-menuanchor="Notas" [class.item-selected]="headerSelectedSection == 1" [hidden]="!isLogged" (click)="moveDown()" class="item"> Sistema </div>
   </div>
 
   <div class="right-side"></div>
 </div>
   
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" class="full-page">
-  <div class="section"> 
+  <div class="section" id="section0"> 
       <home-page *ngIf="isLogged">
       </home-page>
-      <login-page *ngIf="!isLogged">
+      <login-page id="login" *ngIf="!isLogged" (onLogin)="login()">
       </login-page>
   </div>
 
-  <div class="section system">
+  <div class="section system" id="section1">
     <div class="slide" data-anchor="slide1">
       <div *ngIf="isLoaded">
         <user-create [users]="usersArray">
@@ -27,3 +31,4 @@
     <div class="slide" data-anchor="slide2">Two 2</div>
   </div>
 </div>
+

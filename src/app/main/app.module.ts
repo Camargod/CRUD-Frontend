@@ -19,6 +19,10 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import { UserCreateComponent } from '../modules/user-create/user-create.component';
 import { UserDataService } from '../services/userDataService';
 import { UserCardComponent } from '../modules/user-card/user-card.component';
+import { HttpClientModule } from '@angular/common/http';
+
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 
 
 
@@ -38,6 +42,8 @@ import { UserCardComponent } from '../modules/user-card/user-card.component';
     AngularFullpageModule,
     InputTextModule,
     InputSwitchModule,
+    HttpClientModule,
+    SimpleNotificationsModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: 
