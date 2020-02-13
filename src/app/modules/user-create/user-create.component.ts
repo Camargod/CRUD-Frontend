@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { User } from 'src/app/entities/user';
 import { NotificationsService } from 'angular2-notifications';
+import { UserCard } from 'src/app/entities/userCard';
 
 @Component({
     selector:"user-create",
@@ -9,27 +9,22 @@ import { NotificationsService } from 'angular2-notifications';
 })
 export class UserCreateComponent implements OnInit
 {
-    @Input() users : any;
+    @Input() users : Array<UserCard>;
     /**
      *
      */
-    constructor(private _notifications: NotificationsService) {}
+    constructor() {}
 
     ngOnInit(): void 
     {
-        console.log(this.users);
     }
-
-    notificate(message:string)
+    newUser()
     {
-        this._notifications.success("Global :)",message,
-        {
-            timeOut: 3000,
-            showProgressBar: true,
-            pauseOnHover: true,
-            clickToClose: false,
-            clickIconToClose: true
-        });
+        this.users.push({user:{id:-1,name:"",bio:"",avatar_url:""},isEditing:true,isNew:true})
+    }
+    delete(i:number)
+    {
+        this.users[i].user.id = undefined;
     }
 }
 

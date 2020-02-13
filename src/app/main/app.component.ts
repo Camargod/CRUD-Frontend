@@ -4,6 +4,8 @@ import * as $ from 'jquery';
 import { User } from '../entities/user';
 import {UserDataService} from '../services/userDataService'
 import { NotificationsService } from 'angular2-notifications';
+import { Admin } from '../entities/admin';
+import { UserCard } from '../entities/userCard';
 
 
 
@@ -21,8 +23,9 @@ export class AppComponent implements OnInit, AfterViewInit
   title = 'EtelgPass';
   isLogged : boolean = false;
   usersArray : Array<User>= [];
+  usersCards : Array<UserCard> = [];
   isLoaded : boolean = false;
-  
+  admin : Admin;
   constructor(private _cookieService : CookieService, private _userDataService: UserDataService,private _notifications: NotificationsService) 
   {
     // for more details on config options please visit fullPage.js docs
@@ -32,6 +35,7 @@ export class AppComponent implements OnInit, AfterViewInit
       licenseKey: 'YOUR LICENSE KEY HERE',
       sectionsColor: ['#0f4c75','#0f4c75'],
       menu: '#menu',
+      touchSensitivity: 15,
       // fullpage callbacks
       onLeave: (origin, destination, direction) =>
       {
@@ -71,6 +75,7 @@ export class AppComponent implements OnInit, AfterViewInit
       await this._userDataService.get().subscribe(async e=>
       {
         this.usersArray = e.body;
+        this.convertUserToUserCard();
         this.isLogged = !this.isLogged;
         this.removeFullPageLock();
         this.isLoaded = true;
@@ -87,9 +92,21 @@ export class AppComponent implements OnInit, AfterViewInit
     
   }
 
-  login()
+  async login(admin:Admin, isNew: string = "false")
   {
-    this.getUsers();
+    await this._userDataService.postAdmin(admin,isNew).subscribe(async e=>
+    {
+      if(e.status == 418)
+      {
+        this._notifications.error("Usuário ja existente:","Tente outro nome");
+      }
+      else
+      {
+        let logged = e.body;
+        this.admin = new Admin(logged.id,logged.username,logged.pwd);
+        this.getUsers();
+      }
+    });
   }
 
   removeFullPageLock()
@@ -115,5 +132,10 @@ export class AppComponent implements OnInit, AfterViewInit
   {
     this.fullpage_api.moveSectionUp();
   }
-
+  convertUserToUserCard()
+  {
+    this.usersArray.map(e=>{
+      this.usersCards.push({user:e,isEditing:false,isNew:false});
+    });
+  }
 }

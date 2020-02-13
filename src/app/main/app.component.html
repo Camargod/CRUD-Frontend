@@ -15,20 +15,20 @@
   
 <div fullpage id="fullpage" [options]="config" (ref)="getRef($event)" class="full-page">
   <div class="section" id="section0"> 
-      <home-page *ngIf="isLogged">
+      <home-page *ngIf="isLogged" [admin]="admin">
       </home-page>
-      <login-page id="login" *ngIf="!isLogged" (onLogin)="login()">
+      <login-page id="login" *ngIf="!isLogged" (onLogin)="login($event,'false')">
       </login-page>
   </div>
 
   <div class="section system" id="section1">
     <div class="slide" data-anchor="slide1">
       <div *ngIf="isLoaded">
-        <user-create [users]="usersArray">
+        <user-create [users]="usersCards">
         </user-create>
       </div>
     </div>
-    <div class="slide" data-anchor="slide2">Two 2</div>
+    <!-- <div class="slide" data-anchor="slide2">Two 2</div> -->
   </div>
 </div>
 

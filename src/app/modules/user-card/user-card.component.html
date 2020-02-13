@@ -1,13 +1,39 @@
-<div class="card" id="{{user.id}}">
+<div class="card" *ngIf="!userInfo.isEditing">
     <div class="head">
-        <img class="image" width="55px" height="55px" onerror="this.src='https://iomed.health/assets/img/100x100/blank-user.png'" src={{user.avatar_url}} alt="Foto do Usuario"/>
-        <span class="name">{{user.name}}</span>
-        <svg class="bi bi-trash delete-icon" width="1.3em" height="1.3em" viewBox="0 0 20 20" fill="#3282b8" xmlns="http://www.w3.org/2000/svg">
+        <img class="image" width="55px" height="55px" onerror="this.src='https://iomed.health/assets/img/100x100/blank-user.png'" src={{userInfo.user.avatar_url}} alt="Foto do Usuario"/>
+        <span class="name">{{userInfo.user.name}}</span>
+        <svg class="bi bi-trash delete-icon" (click)="deleteUser()" width="1.3em" height="1.3em" viewBox="0 0 20 20" fill="#3282b8" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 7.5A.5.5 0 018 8v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V8z"></path>
             <path fill-rule="evenodd" d="M16.5 5a1 1 0 01-1 1H15v9a2 2 0 01-2 2H7a2 2 0 01-2-2V6h-.5a1 1 0 01-1-1V4a1 1 0 011-1H8a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM6.118 6L6 6.059V15a1 1 0 001 1h6a1 1 0 001-1V6.059L13.882 6H6.118zM4.5 5V4h11v1h-11z" clip-rule="evenodd"></path>
         </svg>
+        <svg aria-hidden="true" width="1.3em" height="1.3em" (click)="userInfo.isEditing = !userInfo.isEditing" class="svg-icon va-text-bottom o50 iconPencilSm"  viewBox="0 0 16 16">
+            <path d="M11.1 1.71l1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0zM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88z"></path>
+        </svg>
     </div>
     <div class="body">
-        <span>{{user.bio}}</span>
+        <span>{{userInfo.user.bio}}</span>
     </div>
 </div>
+
+<form form [formGroup]="updateForm" (ngSubmit)="updateOrSaveUser()" class="card" *ngIf="userInfo.isEditing">
+
+    <div class="head">
+        <img class="image" width="55px" height="55px" onerror="this.src='https://iomed.health/assets/img/100x100/blank-user.png'" src={{userInfo.user.avatar_url}} alt="Foto do Usuario"/>
+        <input class="name" formControlName="name" title="Nome" value="{{userInfo.user.name}}">
+        <label>
+            <input type="submit" />
+            <svg class="check-icon" xmlns="http://www.w3.org/2000/svg" width="1.3em" height="1.3em" viewBox="0 0 22 22"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+        </label>
+        <svg class="bi bi-trash delete-icon" (click)="deleteUser()" width="1.3em" height="1.3em" viewBox="0 0 20 20" fill="#3282b8" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 7.5A.5.5 0 018 8v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V8a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V8z"></path>
+            <path fill-rule="evenodd" d="M16.5 5a1 1 0 01-1 1H15v9a2 2 0 01-2 2H7a2 2 0 01-2-2V6h-.5a1 1 0 01-1-1V4a1 1 0 011-1H8a1 1 0 011-1h2a1 1 0 011 1h3.5a1 1 0 011 1v1zM6.118 6L6 6.059V15a1 1 0 001 1h6a1 1 0 001-1V6.059L13.882 6H6.118zM4.5 5V4h11v1h-11z" clip-rule="evenodd"></path>
+        </svg>
+        <svg aria-hidden="true" width="1.3em" height="1.3em" (click)="userInfo.isEditing = !userInfo.isEditing" class="svg-icon va-text-bottom o50 iconPencilSm"  viewBox="0 0 16 16">
+            <path d="M11.1 1.71l1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0zM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88z"></path>
+        </svg>
+    </div>
+    <div class="body">
+        <input class="bio-input" formControlName="bio" title="Biografia" value="{{userInfo.user.bio}}">
+    </div>
+</form>
+

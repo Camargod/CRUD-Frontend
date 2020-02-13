@@ -23,6 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 
 
 
@@ -37,6 +40,8 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
   imports: [
     BrowserModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFullpageModule,
@@ -44,12 +49,13 @@ import { SimpleNotificationsModule } from 'angular2-notifications';
     InputSwitchModule,
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
+    FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: 
   [
     CookieService,
-    UserDataService
+    UserDataService,
   ],
   bootstrap: [AppComponent,HomePageComponent]
 })

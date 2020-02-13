@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "httpServer": "ng build --prod && http-server -p 8080 -c-1 dist/CRUD-Frontend"
+    "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend"
   },
   "private": true,
   "dependencies": {
@@ -25,6 +25,10 @@
     "@angular/pwa": "^0.803.20",
     "@angular/router": "~8.2.14",
     "@angular/service-worker": "~8.2.14",
+    "@fortawesome/angular-fontawesome": "0.5",
+    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fullpage/angular-fullpage": "0.0.14",
     "angular2-notifications": "^3.0.0",
     "axios": "^0.19.2",

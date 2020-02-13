@@ -28,6 +28,14 @@
         {
             fill: #bbe1fa;
         }
+        .check-icon
+        {
+            fill: #40f540;
+            &:hover
+            {
+                fill: #48e248;
+            }
+        }
     }
 
     .body
@@ -41,5 +49,14 @@
         text-align: justify;
         padding: 0 6px;
         font-size: 14px;
+        .bio-input
+        {
+            width: 100%;
+        }
     }
+}
+
+input[type="submit"] 
+{ 
+    display: none;
 }

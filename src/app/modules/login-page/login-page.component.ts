@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Admin } from 'src/app/entities/admin';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'login-page',
@@ -10,14 +12,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class LoginPageComponent implements OnInit {
 
   @Output() onLogin : EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  loginForm;
+  constructor(private formBuilder: FormBuilder) { }
   ngOnInit() 
   {
+    this.loginForm = this.formBuilder.group({
+      username: '',
+      pwd: ''
+    });
   }
 
   login()
   {
-    this.onLogin.emit('');
+    this.onLogin.emit(this.loginForm.value);
     this.onLogin.unsubscribe();
   }
 
