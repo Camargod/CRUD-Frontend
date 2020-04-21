@@ -3,14 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "start-dev": "ng serve -c development",
     "start-prod": "ng serve -c production",
     "build": "ng build --prod --aot",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend"
+    "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend",
+    "postinstall": "ng build — aot — prod"
   },
   "private": true,
   "dependencies": {
@@ -32,6 +33,7 @@
     "@fullpage/angular-fullpage": "0.0.14",
     "angular2-notifications": "^3.0.0",
     "axios": "^0.19.2",
+    "express": "^4.17.1",
     "http-server": "^0.12.0",
     "https": "^1.0.0",
     "jquery": "^3.4.1",
