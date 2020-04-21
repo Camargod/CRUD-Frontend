@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend",
-    "postinstall": "ng build —-prod"
+    "postinstall": "ng build"
   },
   "private": true,
   "dependencies": {
@@ -65,9 +65,5 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  },
-  "engines": {
-    "node": "10.9.0",
-    "npm": "6.4.1"
   }
 }
