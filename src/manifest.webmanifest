@@ -1,6 +1,6 @@
 {
-  "name": "CRUD-Frontend",
-  "short_name": "CRUD-Frontend",
+  "name": "crud-frontend",
+  "short_name": "crud-frontend",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "fullscreen",
