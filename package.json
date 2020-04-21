@@ -3,15 +3,15 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "start-dev": "ng serve -c development",
     "start-prod": "ng serve -c production",
-    "build": "ng build --prod --aot",
+    "build": "node server.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend",
-    "postinstall": "ng build — aot — prod"
+    "postinstall": "ng build —-aot —-prod"
   },
   "private": true,
   "dependencies": {
