@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "httpServer": "ng build --prod --aot && http-server -g -p 8080 -c-1 dist/CRUD-Frontend",
-    "postinstall": "ng build —-aot —-prod"
+    "postinstall": "ng build —-prod"
   },
   "private": true,
   "dependencies": {
