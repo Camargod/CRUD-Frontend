@@ -14,8 +14,6 @@ import { CookieService } from 'ngx-cookie-service';
 import { LoginPageComponent } from '../modules/login-page/login-page.component'
 import { CommonModule } from '@angular/common';
 
-import {InputTextModule} from 'primeng/inputtext';
-import {InputSwitchModule} from 'primeng/inputswitch';
 import { UserCreateComponent } from '../modules/user-create/user-create.component';
 import { UserDataService } from '../services/userDataService';
 import { UserCardComponent } from '../modules/user-card/user-card.component';
@@ -24,8 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 
 
 
@@ -45,11 +41,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFullpageModule,
-    InputTextModule,
-    InputSwitchModule,
     HttpClientModule,
     SimpleNotificationsModule.forRoot(),
-    FontAwesomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: 
