@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import * as $ from 'jquery';
 import { User } from '../entities/user';
@@ -13,6 +13,10 @@ import { UserCard } from '../entities/userCard';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
+})
+
+@Injectable({
+  providedIn:'root'
 })
 
 export class AppComponent implements OnInit, AfterViewInit
