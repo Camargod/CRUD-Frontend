@@ -1,25 +1,25 @@
-<div class="circle"></div>
-
-<div class="login-page">
-    <div class="login-area">
-        <div id="my-particles" class="image">
-            
-        </div>
-        <div class="login-form">
-            <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-signin">
-                <h1 class="h3 mb-3 font-weight-normal">Faça seu login</h1>
-                <label for="username" class="sr-only">Username</label>
-                <input type="user" id="username" name="username" class="form-control" placeholder="Username" formControlName="username" required="" autofocus="" ngModel required>
-                <label for="pwd" class="sr-only">Password</label>
-                <input type="password" id="pwd" name="pwd" class="form-control" formControlName="pwd" placeholder="Password" required="" ngModel required>
-                <div class="checkbox mb-3">
-                  <label>
-                    <input type="checkbox" value="remember-me"> Lembre de mim
-                  </label>
-                </div>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
-              </form>
-        </div>
-    </div>
+<div class="body">
+  <div class="login-body">
+      <img width="75" height="75" src="./assets/painel-de-controle.svg" alt="logo da aplicação">
+      
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+          <div class="inputs">
+              <label for="username" class="title">Username</label>
+              <input type="user" id="username" name="username" class="w3-round input" id="teste" type="text" title="nome" placeholder="Nome ou email" formControlName="username" required="" autofocus="" ngModel required/>
+              <label for="pwd" class="title">Password</label>
+              <input class="w3-round input" ype="password" id="pwd" name="pwd" type="password" title="nome" formControlName="pwd" placeholder="******" required="" ngModel required/>
+              <button class="button" type="submit">Entrar</button>
+          </div>
+      </form>
+      <hr class="line">
+      <div class="other-logins">
+      <p>Você também pode logar com:</p>
+          <div class="icons">
+              <img class="icon-login" alt="Login com Google" width="25" height="25" src="./assets/hangouts-do-google.svg">
+              <img class="icon-login" alt="Login com Facebook" width="25" height="25" src="./assets/facebook.svg">
+              <img class="icon-login" alt="Login com Github" width="25" height="25" src="./assets/github.svg">
+          </div>
+      </div>
+  </div>
+  <p class="flaticon">Ícones feitos por <a href="https://www.flaticon.com/br/autores/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon"> www.flaticon.com</a></p>
 </div>
-
