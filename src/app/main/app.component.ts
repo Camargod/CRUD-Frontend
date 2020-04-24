@@ -76,7 +76,7 @@ export class AppComponent implements OnInit, AfterViewInit
   {
     try
     {
-      await this._userDataService.get().subscribe(async e=>
+      this._userDataService.get().subscribe(async e=>
       {
         this.usersArray = e.body;
         this.convertUserToUserCard();
@@ -98,7 +98,7 @@ export class AppComponent implements OnInit, AfterViewInit
 
   async login(admin:Admin, isNew: string = "false")
   {
-    await this._userDataService.postAdmin(admin,isNew).subscribe(async e=>
+    this._userDataService.postAdmin(admin,isNew).subscribe(async e=>
     {
       if(e.status == 418)
       {
